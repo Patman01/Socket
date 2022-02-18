@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+   <head><title>Plug in the Socket</title></head>
+   <!-- Links with the Socket handling .js file--> 
+   <script src="/socket.io/socket.io.js"></script>
+   <script>
+      
+      let socket = io();
+
+      // Handles connecting to the room
+      socket.on('roomIntro', (introData) => {
+        document.body.innerHTML ='';
+        document.write(introData);
+      });
+
+      // Handles ending the connection to the room
+      socket.on('roomOutro', (outroData) => {
+         // appends outroData to the client's screen
+         document.write(outroData);
+      });
+      
+   </script>
+   <body>Room</body>
+</html>
